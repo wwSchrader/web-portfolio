@@ -1,0 +1,20 @@
+.contact-form{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  width: 40%;
+  max-width: 500px;
+  min-width: 250px;
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  margin: auto;
+  max-width: 200px;
+}
