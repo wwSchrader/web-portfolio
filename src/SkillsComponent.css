@@ -4,3 +4,20 @@ img {
   margin: 10px;
 }
 
+.SkillsComponent div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.SkillsComponent div h2 {
+  width: 33%;
+}
+
+.SkillsComponent div div {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 66%;
+}
