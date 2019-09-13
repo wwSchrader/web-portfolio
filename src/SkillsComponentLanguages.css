@@ -1,10 +1,4 @@
-img {
-  height: 100px;
-  width: auto;
-  margin: 10px;
-}
-
-.SkillsComponent div {
+.language-container {
   display: flex;
   flex-direction: row;
   margin-top: 50px;
@@ -12,11 +6,11 @@ img {
   align-items: center;
 }
 
-.SkillsComponent div h2 {
+.header {
   width: 33%;
 }
 
-.SkillsComponent div div {
+.logo-continer {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 66%;

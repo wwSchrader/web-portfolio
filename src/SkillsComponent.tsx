@@ -1,19 +1,12 @@
 import React from 'react';
 import './SkillsComponent.css';
+import SkillsComponentLanguages from './SkillsComponentLanguages';
 
 const SkillsComponent: React.FC = () => {
   return (
     <div className='SkillsComponent'>
       <h3>Skills Component</h3>
-      <div className='skills-programlang'>
-        <h2 className='skills-programlang-header'>Languages</h2>
-        <div>
-          <img alt='' src='./images/HTML5_logo_and_wordmark.svg' />
-          <img alt='' src='./images/CSS3_logo_and_wordmark.svg' />
-          <img alt='' src='./images/js.png' />
-          <img alt='' src='./images/Java_logo.svg' />
-        </div>
-      </div>
+      <SkillsComponentLanguages />
       <div>
         <div>
           <img alt='' src='./images/nodejs-new-pantone-black.png' />
