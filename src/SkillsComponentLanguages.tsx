@@ -22,7 +22,6 @@ const SkillsComponentLanguages: React.FC = () => {
 
   const handleScroll = (e: Event) => {
     const element = e.target;
-    console.log(element);
     setShowLogos(true);
   };
 
