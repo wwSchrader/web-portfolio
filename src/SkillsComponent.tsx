@@ -1,21 +1,14 @@
 import React from 'react';
 import './SkillsComponent.css';
 import SkillsComponentLanguages from './SkillsComponentLanguages';
+import SkillsComponentFrameworks from './SkillsComponentFrameworks';
 
 const SkillsComponent: React.FC = () => {
   return (
     <div className='SkillsComponent'>
       <h3>Skills Component</h3>
       <SkillsComponentLanguages />
-      <div>
-        <div>
-          <img alt='' src='./images/nodejs-new-pantone-black.png' />
-          <img alt='' src='./images/express-facebook-share.png' />
-          <img alt='' src='./images/iconfinder_react.js_logo_1174949.svg'/>
-          <img alt='' src='./images/angular.svg' />
-        </div>
-        <h2>Frameworks</h2>
-      </div>
+      <SkillsComponentFrameworks />
       <div>
         <h2>Databases</h2>
         <div>

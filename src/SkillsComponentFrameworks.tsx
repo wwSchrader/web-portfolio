@@ -2,14 +2,16 @@ import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
 
 const logoUri = [
-  './images/HTML5_logo_and_wordmark.svg',
-  './images/CSS3_logo_and_wordmark.svg',
-  './images/js.png',
-  './images/Java_logo.svg',
+  './images/nodejs-new-pantone-black.png',
+  './images/express-facebook-share.png',
+  './images/iconfinder_react.js_logo_1174949.svg',
+  './images/angular.svg',
 ];
 
-const SkillsComponentLanguages: React.FC = () => {
+const SkillsComponentFrameworks: React.FC = () => {
   const [showLogos, setShowLogos] = useState(false);
+
+  let divRef = React.createRef<HTMLDivElement>();
 
   const trail = useTrail(logoUri.length, {
     from: {
@@ -21,7 +23,16 @@ const SkillsComponentLanguages: React.FC = () => {
   });
 
   const handleScroll = (e: any) => {
-    setShowLogos(true);
+    const scrollingElement = e.target.scrollingElement;
+    const node = divRef.current;
+
+    if (node) {
+      if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
+        setShowLogos(true);
+      } else {
+        setShowLogos(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -33,9 +44,8 @@ const SkillsComponentLanguages: React.FC = () => {
   });
 
   return (
-    <div className='language-container'>
-      <h2 className='header'>Languages</h2>
-      <div className='logo-continer'>
+    <div className='frameworks-container' ref={divRef}>
+      <div className='logo-container'>
         {trail.map(({...props}, index) => (
           <animated.img
             key={logoUri[index]}
@@ -44,8 +54,9 @@ const SkillsComponentLanguages: React.FC = () => {
           />
         ))}
       </div>
+      <h2 className='header'>Frameworks</h2>
     </div>
   )
-}
+};
 
-export default SkillsComponentLanguages;
+export default SkillsComponentFrameworks;
