@@ -11,6 +11,8 @@ const logoUri = [
 const SkillsComponentLanguages: React.FC = () => {
   const [showLogos, setShowLogos] = useState(false);
 
+  let divRef = React.createRef<HTMLDivElement>();
+
   const trail = useTrail(logoUri.length, {
     from: {
       transform: 'translate3d(500px,0,0)',
@@ -21,7 +23,16 @@ const SkillsComponentLanguages: React.FC = () => {
   });
 
   const handleScroll = (e: any) => {
-    setShowLogos(true);
+    const scrollingElement = e.target.scrollingElement;
+    const node = divRef.current;
+
+    if (node) {
+      if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
+        setShowLogos(true);
+      } else {
+        setShowLogos(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -33,7 +44,7 @@ const SkillsComponentLanguages: React.FC = () => {
   });
 
   return (
-    <div className='language-container'>
+    <div className='language-container' ref={divRef}>
       <h2 className='header'>Languages</h2>
       <div className='logo-continer'>
         {trail.map(({...props}, index) => (
