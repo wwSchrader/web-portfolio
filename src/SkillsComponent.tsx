@@ -2,6 +2,7 @@ import React from 'react';
 import './SkillsComponent.css';
 import SkillsComponentLanguages from './SkillsComponentLanguages';
 import SkillsComponentFrameworks from './SkillsComponentFrameworks';
+import SkillsComponentDatabases from './SkillsComponentDatabases';
 
 const SkillsComponent: React.FC = () => {
   return (
@@ -9,15 +10,7 @@ const SkillsComponent: React.FC = () => {
       <h3>Skills Component</h3>
       <SkillsComponentLanguages />
       <SkillsComponentFrameworks />
-      <div>
-        <h2>Databases</h2>
-        <div>
-          <img alt='' src='./images/mongodb-logo-rgb-j6w271g1xn.jpg' />
-          <img alt='' src='./images/Redis_Logo.svg' />
-          <img alt='' src='./images/sqlite-logo.svg' />
-          <img alt='' src='./images/firebase-logo.svg' />
-        </div>
-      </div>
+      <SkillsComponentDatabases />
       <div>
         <div>
         <img alt='' src='./images/jest-logo.svg' />
