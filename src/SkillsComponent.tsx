@@ -4,6 +4,7 @@ import SkillsComponentLanguages from './SkillsComponentLanguages';
 import SkillsComponentFrameworks from './SkillsComponentFrameworks';
 import SkillsComponentDatabases from './SkillsComponentDatabases';
 import SkillsComponentTests from './SkillsComponentTests';
+import SkillsComponentOther from './SkillsComponentOther';
 
 const SkillsComponent: React.FC = () => {
   return (
@@ -13,19 +14,7 @@ const SkillsComponent: React.FC = () => {
       <SkillsComponentFrameworks />
       <SkillsComponentDatabases />
       <SkillsComponentTests />
-      <div>
-        <h2>Other</h2>
-        <div>
-          <img alt='' src='./images/heroku-logo.svg' />
-          <img alt='' src='./images/github-logo.png' />
-          <img alt='' src='./images/Git-logo.svg' />
-          <img alt='' src='./images/redux-logo.png' />
-          <img alt='' src='./images/Boostrap_logo.svg' />
-          <img alt='' src='./images/mongoose-logo.png' />
-          <img alt='' src='./images/socket-io.svg' />
-          <img alt='' src='./images/passport-logo.png' />
-        </div>
-      </div>
+      <SkillsComponentOther />
     </div>
   );
 }
