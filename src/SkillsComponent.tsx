@@ -3,6 +3,7 @@ import './SkillsComponent.css';
 import SkillsComponentLanguages from './SkillsComponentLanguages';
 import SkillsComponentFrameworks from './SkillsComponentFrameworks';
 import SkillsComponentDatabases from './SkillsComponentDatabases';
+import SkillsComponentTests from './SkillsComponentTests';
 
 const SkillsComponent: React.FC = () => {
   return (
@@ -11,14 +12,7 @@ const SkillsComponent: React.FC = () => {
       <SkillsComponentLanguages />
       <SkillsComponentFrameworks />
       <SkillsComponentDatabases />
-      <div>
-        <div>
-        <img alt='' src='./images/jest-logo.svg' />
-          <img alt='' src='./images/mocha-logo.svg' />
-          <img alt='' src='./images/chai-logo.png' />
-        </div>
-        <h2>Test Libraries</h2>
-      </div>
+      <SkillsComponentTests />
       <div>
         <h2>Other</h2>
         <div>
