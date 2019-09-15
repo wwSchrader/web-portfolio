@@ -15,10 +15,10 @@ const SkillsComponentFrameworks: React.FC = () => {
 
   const trail = useTrail(logoUri.length, {
     from: {
-      transform: 'translate3d(500px,0,0)',
+      transform: 'translate3d(-500px,0,0)',
       opacity: 0,
     },
-    transform: showLogos ? 'translate3d(0px,0,0)' : 'translate3d(500px,0,0)',
+    transform: showLogos ? 'translate3d(0px,0,0)' : 'translate3d(-500px,0,0)',
     opacity: showLogos ? 1 : 0,
   });
 
