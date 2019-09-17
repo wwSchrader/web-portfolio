@@ -1,4 +1,40 @@
-.project-img {
-  max-width: 30%;
-  height: auto;
-};
+.project-header {
+  position: absolute;
+  text-emphasis: center;
+  z-index: 2;
+  top: 30%;
+  left: 0;
+  width: 100%;
+}
+
+.projects-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 10px;
+
+}
+
+.single-project-container {
+  display: block;
+  position: relative;
+}
+
+.project-image {
+  width: 390px;
+  height: 300px;
+  display: block;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.project-button {
+  right: 0;
+  left: 0;
+  bottom: 30%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+}
