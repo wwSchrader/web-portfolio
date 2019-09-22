@@ -46,7 +46,7 @@ const ProjectsComponentContainer: React.FC<IProps> = (props) => {
   };
 
   return (
-    <div onMouseOver={handleScrollOn} onMouseOut={handleScrollOff}>
+    <div onMouseOver={handleScrollOn} onMouseLeave={handleScrollOff}>
       <animated.div className='project-image' style={imageSpring}></animated.div>
       <animated.h2 className={'project-header'} style={headerSpring}>{props.project.name}</animated.h2>
       <animated.button className='project-button' style={buttonSpring}>Click Here</animated.button>
