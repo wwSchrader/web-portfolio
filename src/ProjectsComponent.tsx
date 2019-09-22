@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './ProjectsComponent.css';
 import {useTrail, animated} from 'react-spring';
+import ProjectsComponentContainer from './ProjectsComponentContainer';
 
 const projects = [
   {
@@ -46,15 +47,11 @@ const ProjectsComponent: React.FC = () => {
   const handleScroll = (e: any) => {
     const scrollingElement = e.target.scrollingElement;
     const node = divRef.current;
-    console.log('handle scroll');
-    console.log(divRef);
 
     if (node) {
       if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
-        console.log('Show project');
         setShowProject(true);
       } else {
-        console.log('hide project');
         setShowProject(false);
       }
     }
@@ -78,9 +75,7 @@ const ProjectsComponent: React.FC = () => {
             key={projects[index].name}
             style={props}
           >
-            <div className='project-image' style={{backgroundImage: 'url(' + projects[index].url + ')'}}></div>
-            <h2 className={'project-header'}>{projects[index].name}</h2>
-            <button className='project-button'>Click Here</button>
+            <ProjectsComponentContainer project={projects[index]}/>
           </animated.div>
         ))}
       </div>
