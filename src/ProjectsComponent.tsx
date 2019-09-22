@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './ProjectsComponent.css';
+import {useTrail, animated} from 'react-spring';
 
 const projects = [
   {
@@ -29,16 +30,58 @@ const projects = [
 ];
 
 const ProjectsComponent: React.FC = () => {
+  const [showProject, setShowProject] = useState(false);
+
+  const trail = useTrail(projects.length, {
+    from: {
+      opacity: 0,
+      transform: 'scale3d(1,1,1)',
+    },
+    opacity: showProject ? 1 : 0,
+    transform: showProject ? 'scale3d(1,1,1)' : 'scale3d(0,0,0)',
+  });
+
+  let divRef = React.createRef<HTMLDivElement>();
+
+  const handleScroll = (e: any) => {
+    const scrollingElement = e.target.scrollingElement;
+    const node = divRef.current;
+    console.log('handle scroll');
+    console.log(divRef);
+
+    if (node) {
+      if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
+        console.log('Show project');
+        setShowProject(true);
+      } else {
+        console.log('hide project');
+        setShowProject(false);
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, true);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  });
+
   return (
-    <div>
+    <div ref={divRef}>
       <h3>Projects Component</h3>
       <div className='projects-container'>
-        {projects.map((project) => (
-          <div className={'single-project-container'}>
-            <div className='project-image' style={{backgroundImage: 'url(' + project.url + ')'}}></div>
-            <h2 className={'project-header'}>{project.name}</h2>
+        {trail.map(({...props}, index) => (
+          <animated.div
+            className={'single-project-container'}
+            key={projects[index].name}
+            style={props}
+          >
+            <div className='project-image' style={{backgroundImage: 'url(' + projects[index].url + ')'}}></div>
+            <h2 className={'project-header'}>{projects[index].name}</h2>
             <button className='project-button'>Click Here</button>
-          </div>
+          </animated.div>
         ))}
       </div>
     </div>
