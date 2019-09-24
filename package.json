@@ -10,6 +10,7 @@
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-modal": "^3.10.1",
     "react-particles-js": "^2.7.0",
     "react-scripts": "3.1.1",
     "react-spring": "^8.0.27",
@@ -39,5 +40,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://wwschrader.github.io/web-portfolio"
+  "homepage": "https://wwschrader.github.io/web-portfolio",
+  "devDependencies": {
+    "@types/react-modal": "^3.8.3"
+  }
 }

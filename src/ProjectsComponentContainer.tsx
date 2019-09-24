@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useSpring, animated} from 'react-spring';
+import ProjectModal from './ProjectModal';
 
 interface IProps {
   project: {
@@ -10,6 +11,7 @@ interface IProps {
 
 const ProjectsComponentContainer: React.FC<IProps> = (props) => {
   const [hover, setHover] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const imageSpring = useSpring({
     from: {
@@ -45,11 +47,20 @@ const ProjectsComponentContainer: React.FC<IProps> = (props) => {
     setHover(false);
   };
 
+  function openProjectModal() {
+    setOpenModal(true);
+  }
+
+  function closeProjectModal() {
+    setOpenModal(false);
+  }
+
   return (
     <div onMouseOver={handleScrollOn} onMouseLeave={handleScrollOff}>
       <animated.div className='project-image' style={imageSpring}></animated.div>
       <animated.h2 className={'project-header'} style={headerSpring}>{props.project.name}</animated.h2>
-      <animated.button className='project-button' style={buttonSpring}>Click Here</animated.button>
+      <animated.button className='project-button' style={buttonSpring} onClick={openProjectModal}>Click Here</animated.button>
+      <ProjectModal project={props.project} isOpen={openModal} closeWindow={closeProjectModal}/>
     </div>
   );
 }
