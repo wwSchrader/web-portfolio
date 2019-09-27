@@ -6,7 +6,10 @@ interface IProps {
   project: {
     name: string,
     url: string,
-  }
+    description: string,
+    webLink: string,
+    githubLink: string,
+  },
 }
 
 const ProjectsComponentContainer: React.FC<IProps> = (props) => {
