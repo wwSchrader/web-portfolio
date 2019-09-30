@@ -1,0 +1,15 @@
+.bio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image {
+  height: 300px;
+  width: auto;
+}
+
+p {
+  margin-left: 20px;
+}
