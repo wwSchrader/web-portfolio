@@ -5,7 +5,7 @@ const ContactComponent: React.FC = () => {
   return (
     <div id='contact' className='ContactComponent'>
       <h3>Contact Me</h3>
-      <form className='contact-form' action="https://formspree.io/email@domain.tld" method="POST">
+      <form className='contact-form' action="https://formspree.io/wwschrader@gmail.com" method="POST">
         Name:
         <input type='text' name='name' required/>
         Email:
