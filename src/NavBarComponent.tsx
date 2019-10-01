@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 import './NavBarComponent.css';
 
 const NavBarComponent: React.FC = () => {
@@ -32,10 +33,11 @@ const NavBarComponent: React.FC = () => {
 
   return (
     <div id='navbar' className={stickNav ? 'sticky' : ''} ref={divRef}>
-      <a href='/#'>Home</a>
-      <a href='/#'>Bio</a>
-      <a href='/#'>Skills</a>
-      <a href='/#'>Contact</a>
+      <NavLink smooth to='/#splash'>Home</NavLink>
+      <NavLink smooth to='/#bio'>Bio</NavLink>
+      <NavLink smooth to='/#skills'>Skills</NavLink>
+      <NavLink smooth to='/#projects'>Projects</NavLink>
+      <NavLink smooth to='/#contact'>Contact</NavLink>
     </div>
   );
 }

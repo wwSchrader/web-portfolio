@@ -8,7 +8,7 @@ import SkillsComponentOther from './SkillsComponentOther';
 
 const SkillsComponent: React.FC = () => {
   return (
-    <div className='SkillsComponent'>
+    <div id='skills' className='SkillsComponent'>
       <h3>Skills Component</h3>
       <SkillsComponentLanguages />
       <SkillsComponentFrameworks />

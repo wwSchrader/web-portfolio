@@ -3,7 +3,7 @@ import './ContactComponent.css';
 
 const ContactComponent: React.FC = () => {
   return (
-    <div className='ContactComponent'>
+    <div id='contact' className='ContactComponent'>
       <h3>Contact Me</h3>
       <form className='contact-form' action="https://formspree.io/email@domain.tld" method="POST">
         Name:
