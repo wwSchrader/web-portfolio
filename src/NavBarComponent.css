@@ -1,0 +1,20 @@
+#navbar {
+  overflow: hidden;
+  background-color: dodgerblue;
+  z-index: 100;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: brown;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
