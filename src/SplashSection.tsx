@@ -7,7 +7,6 @@ import TextLoop from 'react-text-loop';
 const particlesParam = ParticlesParam as any;
 
 const  SplashSection: React.FC = () => {
-  console.log(ParticlesParam);
   return (
     <div id='splash' className='SplashSection'>
       <ReactParticles className='ReactParticles' width='100%' height='100%' params={particlesParam} />
