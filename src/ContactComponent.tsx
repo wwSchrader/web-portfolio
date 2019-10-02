@@ -1,9 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './ContactComponent.css';
 
-const ContactComponent: React.FC = () => {
+interface IProps {
+  setTrigger: React.Dispatch<React.SetStateAction<number | null>>,
+}
+
+const ContactComponent: React.FC<IProps> = (props) => {
+  let divRef = React.createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    const node = divRef.current;
+    if (node) {
+      props.setTrigger(node.offsetTop);
+    }
+  });
+
   return (
-    <div id='contact' className='ContactComponent'>
+    <div id='contact' className='ContactComponent' ref={divRef}>
       <h3>Contact Me</h3>
       <form className='contact-form' action="https://formspree.io/wwschrader@gmail.com" method="POST">
         Name:

@@ -48,7 +48,11 @@ const projects = [
   },
 ];
 
-const ProjectsComponent: React.FC = () => {
+interface IProps {
+  setTrigger: React.Dispatch<React.SetStateAction<number | null>>,
+}
+
+const ProjectsComponent: React.FC<IProps> = (props) => {
   const [showProject, setShowProject] = useState(false);
 
   const trail = useTrail(projects.length, {
@@ -76,6 +80,11 @@ const ProjectsComponent: React.FC = () => {
   };
 
   useEffect(() => {
+    const node = divRef.current;
+    if (node) {
+      props.setTrigger(node.offsetTop);
+    }
+
     window.addEventListener('scroll', handleScroll, true);
 
     return () => {
