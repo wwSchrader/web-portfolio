@@ -18,7 +18,7 @@ const BioComponent: React.FC<IProps> = (props) => {
   });
 
   return (
-    <div id='bio' ref={divRef}>
+    <div id='bio' className='BioComponent' ref={divRef}>
       <h2>BioComponent</h2>
       <div className='bio-container'>
         <img className='bio-image' src='./images/portrait.jpg' alt='My Portrait' />

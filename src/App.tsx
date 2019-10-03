@@ -23,13 +23,13 @@ const App: React.FC = () => {
 
     if (node && bioTrigger && skillsTrigger && projectsTrigger && contactTrigger) {
       // look up scroll position to determine which navlink in the nav bar should be active
-      if(scrollingElement.scrollTop < bioTrigger) {
+      if(scrollingElement.scrollTop < bioTrigger - 100) {
         setActiveNav('splash');
-      } else if(scrollingElement.scrollTop >= bioTrigger && scrollingElement.scrollTop < skillsTrigger) {
+      } else if(scrollingElement.scrollTop >= bioTrigger - 100 && scrollingElement.scrollTop < skillsTrigger -50) {
         setActiveNav('bio');
-      } else if(scrollingElement.scrollTop >= skillsTrigger && scrollingElement.scrollTop < projectsTrigger) {
+      } else if(scrollingElement.scrollTop >= skillsTrigger - 50 && scrollingElement.scrollTop < projectsTrigger - 50) {
         setActiveNav('skills');
-      } else if(scrollingElement.scrollTop >= projectsTrigger && (scrollingElement.scrollTop + scrollingElement.clientHeight + 1) <= node.clientHeight) {
+      } else if(scrollingElement.scrollTop >= projectsTrigger - 50 && (scrollingElement.scrollTop + scrollingElement.clientHeight + 1) <= node.clientHeight) {
         setActiveNav('projects');
       } else {
         setActiveNav('contact');

@@ -18,3 +18,7 @@ button {
   margin: auto;
   max-width: 200px;
 }
+
+.ContactComponent {
+  padding-top: 50px;
+}
