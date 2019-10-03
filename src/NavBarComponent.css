@@ -22,3 +22,7 @@
 .active {
   background-color: red;
 }
+
+.sticky + div {
+  padding-top: 50px;
+}
