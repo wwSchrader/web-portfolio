@@ -21,7 +21,7 @@ const App: React.FC = () => {
     const scrollingElement = e.target.scrollingElement;
     const node = divRef.current;
 
-    if (node && bioTrigger && skillsTrigger && projectsTrigger && contactTrigger) {
+    if (node && scrollingElement && bioTrigger && skillsTrigger && projectsTrigger && contactTrigger) {
       // look up scroll position to determine which navlink in the nav bar should be active
       if(scrollingElement.scrollTop < bioTrigger - 100) {
         setActiveNav('splash');

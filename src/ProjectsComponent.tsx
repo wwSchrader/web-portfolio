@@ -70,7 +70,7 @@ const ProjectsComponent: React.FC<IProps> = (props) => {
     const scrollingElement = e.target.scrollingElement;
     const node = divRef.current;
 
-    if (node) {
+    if (node && scrollingElement) {
       if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
         setShowProject(true);
       } else {

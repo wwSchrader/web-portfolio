@@ -15,7 +15,7 @@ const NavBarComponent: React.FC<IProps> = (props) => {
   const handleScroll = (e: any) => {
     const scrollingElement = e.target.scrollingElement;
     const node = divRef.current;
-    if (node) {
+    if (node && scrollingElement) {
       if (!initialOffsetTop) {
         // saves the initial offsetTop so it can unstuck when scrolling back over spash component
         setInitialOffsetTop(node.offsetTop);
