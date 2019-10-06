@@ -16,13 +16,19 @@ img {
   width: 33%;
 }
 
-.SkillsComponent div div {
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 66%;
-  position: relative;
-}
-
 .SkillsComponent {
   padding-top: 50px;
+}
+
+.logo-continer {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 60%
+}
+
+.logo {
+  width: auto;
 }

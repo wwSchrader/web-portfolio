@@ -10,9 +10,15 @@
   width: 33%;
 }
 
-.logo-continer {
+.logo-container {
   justify-content: space-evenly;
   flex-wrap: wrap;
-  width: 66%;
   position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 60%
+}
+
+.logo {
+  width: auto;
 }

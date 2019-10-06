@@ -1,11 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
+import Reactooltip from 'react-tooltip';
 
 const logoUri = [
-  './images/nodejs-new-pantone-black.png',
-  './images/express-facebook-share.png',
-  './images/iconfinder_react.js_logo_1174949.svg',
-  './images/angular.svg',
+  {
+    image: './images/nodejs-new-pantone-black.png',
+    caption: 'Node.JS'
+  },
+  {
+    image: './images/express-facebook-share.png',
+    caption: 'Express.JS',
+  },
+  {
+    image: './images/iconfinder_react.js_logo_1174949.svg',
+    caption: 'React.JS',
+  },
+  {
+    image: './images/angular.svg',
+    caption: 'Angular.JS',
+  },
 ];
 
 const SkillsComponentFrameworks: React.FC = () => {
@@ -47,11 +60,16 @@ const SkillsComponentFrameworks: React.FC = () => {
     <div className='frameworks-container' ref={divRef}>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.img
-            key={logoUri[index]}
-            style={props}
-            src={logoUri[index]}
-          />
+          <animated.div className='logo' style={props}>
+            <img
+              key={logoUri[index].image}
+              alt={logoUri[index].caption}
+              src={logoUri[index].image}
+              data-tip
+              data-for={logoUri[index].image}
+            />
+            <Reactooltip id={logoUri[index].image}>{logoUri[index].caption}</Reactooltip>
+          </animated.div>
         ))}
       </div>
       <h2 className='header'>Frameworks</h2>

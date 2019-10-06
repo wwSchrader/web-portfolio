@@ -1,15 +1,40 @@
 import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
+import Reactooltip from 'react-tooltip';
 
 const logoUri = [
-  './images/heroku-logo.svg',
-  './images/github-logo.png',
-  './images/Git-logo.svg',
-  './images/redux-logo.png',
-  './images/Boostrap_logo.svg',
-  './images/mongoose-logo.png',
-  './images/socket-io.svg',
-  './images/passport-logo.png',
+  {
+    image: './images/heroku-logo.svg',
+    caption: 'Heroku',
+  },
+  {
+    image: './images/github-logo.png',
+    caption: 'Github',
+  },
+  {
+    image: './images/Git-logo.svg',
+    caption: 'Git',
+  },
+  {
+    image: './images/redux-logo.png',
+    caption: 'Redux',
+  },
+  {
+    image: './images/Boostrap_logo.svg',
+    caption: 'Bootstrap',
+  },
+  {
+    image: './images/mongoose-logo.png',
+    caption: 'Mongoose',
+  },
+  {
+    image: './images/socket-io.svg',
+    caption: 'Socket.io',
+  },
+  {
+    image: './images/passport-logo.png',
+    caption: 'Passport.JS'
+  },
 ];
 
 const SkillsComponentOther: React.FC = () => {
@@ -52,11 +77,16 @@ const SkillsComponentOther: React.FC = () => {
       <h2>Other</h2>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.img
-            key={logoUri[index]}
-            style={props}
-            src={logoUri[index]}
+          <animated.div className='logo' style={props}>
+          <img
+            key={logoUri[index].image}
+            alt={logoUri[index].caption}
+            src={logoUri[index].image}
+            data-tip
+            data-for={logoUri[index].image}
           />
+          <Reactooltip id={logoUri[index].image}>{logoUri[index].caption}</Reactooltip>
+        </animated.div>
         ))}
       </div>
     </div>

@@ -1,10 +1,20 @@
 import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
+import Reactooltip from 'react-tooltip';
 
 const logoUri = [
-  './images/jest-logo.svg',
-  './images/mocha-logo.svg',
-  './images/chai-logo.png',
+  {
+    image: './images/jest-logo.svg',
+    caption: 'Jest',
+  },
+  {
+    image: './images/mocha-logo.svg',
+    caption: 'Mocha',
+  },
+  {
+    image: './images/chai-logo.png',
+    caption: 'Chai',
+  },
 ];
 
 const SkillsComponentTests: React.FC = () => {
@@ -46,12 +56,17 @@ const SkillsComponentTests: React.FC = () => {
     <div className='tests-container' ref={divRef}>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.img
-            key={logoUri[index]}
-            style={props}
-            src={logoUri[index]}
-          />
-        ))}
+          <animated.div className='logo'>
+             <img
+              key={logoUri[index].image}
+              alt={logoUri[index].caption}
+              src={logoUri[index].image}
+              data-tip
+              data-for={logoUri[index].image}
+            />
+            <Reactooltip id={logoUri[index].image}>{logoUri[index].caption}</Reactooltip>
+          </animated.div>
+          ))}
       </div>
       <h2>Test Libraries</h2>
     </div>

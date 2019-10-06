@@ -1,11 +1,24 @@
 import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
+import Reactooltip from 'react-tooltip';
 
 const logoUri = [
-  './images/mongodb-logo-rgb-j6w271g1xn.jpg',
-  './images/Redis_Logo.svg',
-  './images/sqlite-logo.svg',
-  './images/firebase-logo.svg',
+  {
+    image: './images/mongodb-logo-rgb-j6w271g1xn.jpg',
+    caption: 'MongoDB',
+  },
+  {
+    image: './images/Redis_Logo.svg',
+    caption: 'Redis',
+  },
+  {
+    image: './images/sqlite-logo.svg',
+    caption: 'SQLite',
+  },
+  {
+    image: './images/firebase-logo.svg',
+    caption: 'Firebase',
+  },
 ];
 
 const SkillsComponentDatabases: React.FC = () => {
@@ -48,11 +61,16 @@ const SkillsComponentDatabases: React.FC = () => {
       <h2>Databases</h2>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.img
-            key={logoUri[index]}
-            style={props}
-            src={logoUri[index]}
-          />
+          <animated.div className='logo' style={props}>
+            <img
+              key={logoUri[index].image}
+              src={logoUri[index].image}
+              alt={logoUri[index].caption}
+              data-tip
+              data-for={logoUri[index].image}
+            />
+            <Reactooltip id={logoUri[index].image}>{logoUri[index].caption}</Reactooltip>
+          </animated.div>
         ))}
       </div>
     </div>

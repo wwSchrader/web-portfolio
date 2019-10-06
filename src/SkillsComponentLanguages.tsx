@@ -1,11 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import {useTrail, animated} from 'react-spring';
+import './SkillsComponentLanguages.css';
+import Reactooltip from 'react-tooltip';
 
 const logoUri = [
-  './images/HTML5_logo_and_wordmark.svg',
-  './images/CSS3_logo_and_wordmark.svg',
-  './images/js.png',
-  './images/Java_logo.svg',
+  {
+    image: './images/HTML5_logo_and_wordmark.svg',
+    caption: 'HTML5',
+  },
+  {
+    image: './images/CSS3_logo_and_wordmark.svg',
+    caption: 'CSS3',
+  },
+  {
+    image: './images/js.png',
+    caption: 'Javascript',
+  },
+  {
+    image: './images/Java_logo.svg',
+    caption: 'Java',
+  }
 ];
 
 const SkillsComponentLanguages: React.FC = () => {
@@ -46,13 +60,18 @@ const SkillsComponentLanguages: React.FC = () => {
   return (
     <div className='language-container' ref={divRef}>
       <h2 className='header'>Languages</h2>
-      <div className='logo-continer'>
+      <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.img
-            key={logoUri[index]}
-            style={props}
-            src={logoUri[index]}
-          />
+          <animated.div className='logo' style={props}>
+            <img
+              key={logoUri[index].image}
+              alt={logoUri[index].caption}
+              src={logoUri[index].image}
+              data-tip
+              data-for={logoUri[index].image}
+            />
+            <Reactooltip id={logoUri[index].image}>{logoUri[index].caption}</Reactooltip>
+          </animated.div>
         ))}
       </div>
     </div>
