@@ -56,7 +56,7 @@ const SkillsComponentTests: React.FC = () => {
     <div className='tests-container' ref={divRef}>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.div className='logo'>
+          <animated.div className='logo' style={props}>
              <img
               key={logoUri[index].image}
               alt={logoUri[index].caption}
