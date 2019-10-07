@@ -1,13 +1,13 @@
 #navbar {
   overflow: hidden;
-  background-color: dodgerblue;
+  background-color: #C28D25;
   z-index: 100;
 }
 
 #navbar a {
   float: left;
   display: block;
-  color: brown;
+  color: white;
   text-align: center;
   padding: 14px;
   text-decoration: none;
@@ -20,7 +20,7 @@
 }
 
 .active {
-  background-color: red;
+  background-color: #0C4EB3;
 }
 
 .sticky + div {

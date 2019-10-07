@@ -1,5 +1,5 @@
 .ReactParticles {
-  background-color: black;
+  background-color: #C28D25;
 };
 
 .SplashSection {
@@ -10,7 +10,7 @@
 
 .SplashSection-content {
   position: absolute;
-  color: white;
+  color: #0C4EB3;
   left: 35vw;
   top: 40vh;
 }
