@@ -27,7 +27,7 @@ const ContactComponent: React.FC<IProps> = (props) => {
         <input type='text' name='subject' required/>
         Message:
         <textarea name='message' rows={5} required/>
-        <button type='submit'>Submit</button>
+        <button className='contact-button' type='submit'>Submit</button>
       </form>
     </div>
   );
