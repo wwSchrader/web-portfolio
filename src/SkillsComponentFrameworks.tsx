@@ -42,8 +42,6 @@ const SkillsComponentFrameworks: React.FC = () => {
     if (node && scrollingElement) {
       if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
         setShowLogos(true);
-      } else {
-        setShowLogos(false);
       }
     }
   };

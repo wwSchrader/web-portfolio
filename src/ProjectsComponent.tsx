@@ -73,8 +73,6 @@ const ProjectsComponent: React.FC<IProps> = (props) => {
     if (node && scrollingElement) {
       if ((scrollingElement.clientHeight + scrollingElement.scrollTop) > (node.offsetTop + 200)) {
         setShowProject(true);
-      } else {
-        setShowProject(false);
       }
     }
   };
