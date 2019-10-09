@@ -60,9 +60,8 @@ const SkillsComponentLanguages: React.FC = () => {
       <h2 className='header'>Languages</h2>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.div className='logo' style={props}>
+          <animated.div key={logoUri[index].image} className='logo' style={props}>
             <img
-              key={logoUri[index].image}
               alt={logoUri[index].caption}
               src={logoUri[index].image}
               data-tip

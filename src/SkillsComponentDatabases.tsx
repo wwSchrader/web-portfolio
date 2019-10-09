@@ -59,9 +59,8 @@ const SkillsComponentDatabases: React.FC = () => {
       <h2>Databases</h2>
       <div className='logo-container'>
         {trail.map(({...props}, index) => (
-          <animated.div className='logo' style={props}>
+          <animated.div key={logoUri[index].image} className='logo' style={props}>
             <img
-              key={logoUri[index].image}
               src={logoUri[index].image}
               alt={logoUri[index].caption}
               data-tip
