@@ -11,8 +11,8 @@ const  SplashSection: React.FC = () => {
     <div id='splash' className='SplashSection'>
       <ReactParticles className='ReactParticles' width='100%' height='100%' params={particlesParam} />
       <div className='SplashSection-content'>
-        <h2>Howdy! I'm Warren Schrader.</h2>
-        <h3>
+        <h1>Howdy! I'm Warren Schrader.</h1>
+        <h2>
           I'm a <span>
             <TextLoop>
               <span>front-end</span>
@@ -20,7 +20,7 @@ const  SplashSection: React.FC = () => {
               <span>full-stack</span>
             </TextLoop> 
           </span> web developer.
-        </h3>
+        </h2>
       </div>
     </div>
   );
