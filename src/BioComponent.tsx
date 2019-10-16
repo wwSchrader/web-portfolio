@@ -5,7 +5,10 @@ interface IProps {
   setTrigger: React.Dispatch<React.SetStateAction<number | null>>,
 }
 
-const biography = 'Hello! I\'m a full-stack developer in the San Francisco Bay Area.'
+const biography = `Hello! I'm a full-stack developer in the San Francisco Bay Area.
+I've been developing experience in Javascript, React.js, Redux, Angular.js, Node.js,
+Express.js, Passsport.js, MongoDB, Bootstrap, HTML, & CSS. I also have some experience in developing
+Android applications.`
 
 const BioComponent: React.FC<IProps> = (props) => {
   let divRef = React.createRef<HTMLDivElement>();
@@ -22,7 +25,7 @@ const BioComponent: React.FC<IProps> = (props) => {
       <h2>BioComponent</h2>
       <div className='bio-container'>
         <img className='bio-image' src='./images/portrait.jpg' alt='My Portrait' />
-        <p>{biography}</p>
+        <p className='bio-text'>{biography}</p>
       </div>
     </div>
   );
