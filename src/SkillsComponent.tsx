@@ -22,7 +22,7 @@ const SkillsComponent: React.FC<IProps> = (props) => {
 
   return (
     <div id='skills' className='SkillsComponent' ref={divRef}>
-      <h3>Skills Component</h3>
+      <h3>Skills</h3>
       <SkillsComponentLanguages />
       <SkillsComponentFrameworks />
       <SkillsComponentDatabases />
