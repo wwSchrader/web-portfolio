@@ -22,6 +22,8 @@ const ProjectsComponentContainer: React.FC<IProps> = (props) => {
     },
     opacity: hover ? 0.3 : 1,
     backgroundImage: 'url(' + props.project.url + ')',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   });
 
   const headerSpring = useSpring({
