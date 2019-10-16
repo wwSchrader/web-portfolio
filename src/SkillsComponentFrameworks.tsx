@@ -12,7 +12,7 @@ const logoUri = [
     caption: 'Express.JS',
   },
   {
-    image: './images/iconfinder_react.js_logo_1174949.svg',
+    image: './images/react-logo.svg',
     caption: 'React.JS',
   },
   {
