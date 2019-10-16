@@ -92,7 +92,7 @@ const ProjectsComponent: React.FC<IProps> = (props) => {
 
   return (
     <div id='projects' className='ProjectsComponent' ref={divRef}>
-      <h3>Projects</h3>
+      <h3 className='projects-header'>Projects</h3>
       <div className='projects-container'>
         {trail.map(({...props}, index) => (
           <animated.div
